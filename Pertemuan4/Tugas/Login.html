@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/LogoEdit.jpg" />
+    <title>Login</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="home-link">Home</a>
+        <h2>Login</h2>
+        <form action="index.html" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            <button type="button" onclick="submitForm()">Login</button>
+        </form>
+        <p>Belum punya akun? <a href="registrasi.html">Daftar disini</a></p>
+    </div>
+    <script>
+        async function submitForm() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            
+            if (username.trim() === "" || password.trim() === "") {
+                alert("Harap isi semua kolom!");
+                return;
+            }
+           
+            var confirmation = confirm("Apakah Anda yakin ingin melakukan login?");
+            if (confirmation) {
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                localStorage.setItem("username", username);
+                window.location.href = "admin.html";
+                alert("Login berhasil!"); 
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/LogoEdit.jpg" />
+    <title>Add New Category</title>
+    <link rel="icon" href="assets/icon.png">
+    <link rel="stylesheet" href="../css/admin.css"> <!-- Link to CSS file for styling -->
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo-details">
+            <i class="bx bx-category"></i>
+            <span class="logo-name">CofRay</span>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="../admin.html">
+                    <i class="bx bx-grid-alt"></i>
+                    <span class="links-name">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="categories.html" class="active">
+                    <i class="bx bx-box"></i>
+                    <span class="links-name">Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="../transaction/transaction.html">
+                    <i class="bx bx-list-ul"></i>
+                    <span class="links-name">Transaction</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bx bx-log-out"></i>
+                    <span class="links-name">Log out</span>
+                </a>
+            </li>
+            <img src="../assets/DuaEdit.jpg" alt="" />
+    </ul>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <section class="home-section">
+        <nav>
+            <div class="sidebar-button">
+                <i class="bx bx-menu sidebar-btn"></i>
+            </div>
+            <div class="profile-details">
+                <span class="admin-name">Tambah Categories</span>
+            </div>
+        </nav>
+        <div class="home-content">
+            <header>
+                <h1>Add New Category</h1>
+            </header>
+
+            <main>
+                <!-- Form to add a new category -->
+                <form id="category-form">
+                    <label for="category-name">Category Name:</label>
+                    <input type="text" id="category-name" name="category-name" required>
+                    <button type="submit">Add Category</button>
+                </form>
+            </main>
+        </div>
+    </section>
+
+    <script src="js/categories.js"></script> <!-- Link to JavaScript file for interaction -->
+    <script>
+        const sidebar = document.querySelector(".sidebar");
+        const sidebarBtn = document.querySelector(".sidebar-btn");
+
+        sidebarBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("active");
+            sidebarBtn.classList.toggle("bx-menu-alt-right");
+        });
+    </script>
+</body>
+</html>

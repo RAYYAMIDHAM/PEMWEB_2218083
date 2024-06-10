@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../assets/LogoEdit.jpg" />
+  <title>Categories</title>
+  <link rel="icon" href="assets/icon.png">
+  <link rel="stylesheet" href="../css/admin.css">
+  <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
+  <style>
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .data-table th, .data-table td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    .data-table img {
+      max-width: 100px;
+    }
+    .data-table .btn-edit, .data-table .btn-delete {
+      padding: 4px 8px;
+      margin-right: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class="bx bx-category"></i>
+      <span class="logo-name">CofRay</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="../admin.html">
+          <i class="bx bx-grid-alt"></i>
+          <span class="links-name">Dashboard</span>
+        </a>
+      </li>
+      <li>
+        <a href="categories.html" class="active">
+          <i class="bx bx-box"></i>
+          <span class="links-name">Categories</span>
+        </a>
+      </li>
+      <li>
+        <a href="../transaction/transaction.html">
+          <i class="bx bx-list-ul"></i>
+          <span class="links-name">Transaction</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="bx bx-log-out"></i>
+          <span class="links-name">Log out</span>
+        </a>
+      </li>
+      <img src="../assets/DuaEdit.jpg" alt="" />
+    </ul>
+    </ul>
+  </div>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class="bx bx-menu sidebar-btn"></i>
+      </div>
+      <div class="profile-details">
+        <span class="admin-name">Categories</span>
+      </div>
+    </nav>
+    <div class="home-content">
+      <h1>Halaman Categories</h1>
+      <button type="button" class="btn btn-tambah">
+        <a href="categories-entry.html">Tambah Data</a>
+      </button>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Photo</th>
+            <th>Price</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Data rows will be added dynamically here -->
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Contoh data
+      const data = [
+        { photo: 'path/to/photo1.jpg', price: '$10' },
+        { photo: 'path/to/photo2.jpg', price: '$20' },
+        { photo: 'path/to/photo3.jpg', price: '$30' },
+        // Data lainnya
+      ];
+
+      // Fungsi untuk membuat baris data dalam tabel
+      function createDataRow(photo, price) {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td><img src="${photo}" alt="Product Photo"></td>
+          <td>${price}</td>
+          <td>
+            <button class="btn-edit">Edit</button>
+            <button class="btn-delete">Hapus</button>
+          </td>
+        `;
+        return row;
+      }
+
+      // Memperoleh referensi ke elemen tbody
+      const tbody = document.querySelector('.data-table tbody');
+
+      // Menambahkan setiap entri data ke dalam tabel
+      data.forEach(entry => {
+        const row = createDataRow(entry.photo, entry.price);
+        tbody.appendChild(row);
+      });
+    });
+  </script>
+</body>
+</html>

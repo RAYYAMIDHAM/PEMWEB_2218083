@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="assets/LogoEdit.jpg" />
+  <title>Admin</title>
+  <link rel="icon" href="assets/icon.png">
+  <link rel="stylesheet" href="css/admin.css">
+  <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" 
+            rel="stylesheet">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class="bx bx-category"></i>
+      <span class="logo-name">CofRay</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="#" class="active">
+          <i class="bx bx-grid-alt"></i>
+          <span class="links-name">Dashboard</span>
+        </a>
+      </li>
+      <li>
+        <a href="categories/categories.html">
+          <i class="bx bx-box"></i>
+          <span class="links-name">Categories</span>
+        </a>
+      </li>
+      <li>
+        <a href="transaction/transaction.html">
+          <i class="bx bx-list-ul"></i>
+          <span class="links-name">Transaction</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="bx bx-log-out"></i>
+          <span class="links-name">Log out</span>
+        </a>
+      </li> 
+      <img src="assets/DuaEdit.jpg" alt="" />
+    </ul>
+  </div>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class="bx bx-menu sidebar-btn"></i>
+      </div>
+      <div class="profile-details">
+        <span class="admin-name">Admin</span>
+      </div>
+    </nav>
+    <div class="home-content">
+      <h1>Selamat Datang Admin</h1>
+    </div>
+  </section>
+  <script>
+    const sidebar = document.querySelector(".sidebar");
+    const sidebarBtn = document.querySelector(".sidebar-btn");
+
+    sidebarBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("active");
+      sidebarBtn.classList.toggle("bx-menu-alt-right");
+    });
+  </script>
+</body>
+</html>
